@@ -37,7 +37,6 @@ let isContainerSection = false;
 const positions = [0, 0, 0];
 let typeChoosed = '';
 let deg = 0;
-const titleTop = document.getElementById('top-pagination-p');
 const divCardContainer = document.getElementById('card-container');
 const divSectionsContainer = document.getElementById('card-container-section');
 const divTopPagination = document.getElementById('top-pagination');
@@ -190,13 +189,11 @@ const onlyText = (e) => {
 };
 
 const changeOrderCurrentData = (container) => {
-  deg = 0;
   btnChangeOrder.addEventListener('click', () => {
-    console.log('cambiar');
     deg += 180;
     console.log(deg);
     imgChange.style.transform = `rotate(${deg}deg)`;
-    currentData=changeOrder(currentData);
+    currentData = changeOrder(currentData);
     showCard(currentData, container);
   });
 };
@@ -224,12 +221,11 @@ btnCloseModal.addEventListener('click', () => {
 
 const showAllByFilter = (whichFilter) => {
   divCardContainer.style.display = 'flex';
-  btnChangeOrder.style.visibility = 'visible';
   divSectionsContainer.style.display = 'none';
   isContainerSection = false;
   currentData = filterPokemon(whichFilter, typeChoosed);
-  titleTop.textContent = typeChoosed+'-'+whichFilter+' pokemons';
   showCard(currentData, divCardContainer);
+  deg = 0;
 };
 
 const showMore = document.getElementsByClassName('show-more');
@@ -241,7 +237,6 @@ const showPokemonInSections = () => {
   if (!isContainerSection) {
     isContainerSection = true;
     divCardContainer.style.display = 'none';
-    btnChangeOrder.style.visibility = 'hidden';
     divSectionsContainer.style.display = 'block';
   }
   const divSections = divSectionsContainer.getElementsByClassName('slide-cards');
@@ -299,9 +294,8 @@ const sliderSystem = () => {
 
 const filterSystem = (btn, container) => {
   // const desktopMode = (window.innerWidth >= desktopSize);
+  btnChangeOrder.style.visibility = 'hidden';
   let filterActive = false;
-  titleTop.textContent= '';
-  const titleSlider = document.getElementsByClassName('title-slider-p');
   btn.addEventListener('click', () => {
     if (window.innerWidth >= desktopSize) {
       if (filterActive) {
@@ -315,19 +309,14 @@ const filterSystem = (btn, container) => {
   });
 
   for (let i = 0; i < optionsFilter.length; i += 1) {
-    btnChangeOrder.style.visibility = 'visible';
     optionsFilter[i].addEventListener('click', () => {
       filterPokemonByType(optionsFilter[i].value);
       typeChoosed = optionsFilter[i].value;
-      titleSlider[0].textContent = typeChoosed+'-type pokemons';
-      titleSlider[1].textContent = typeChoosed+'-resistant pokemons';
-      titleSlider[2].textContent = typeChoosed+'-weaknesses pokemons' ;
       if ((window.innerWidth >= desktopSize) === false) {
         hideLateralMenu();
       }
     });
   }
-
 };
 
 
@@ -348,7 +337,6 @@ const orderSystem = (btn) => {
   let orderActive = false;
   const optionsBtnOrder = document.getElementsByClassName('order-option');
   const orderOptions = document.getElementById('ul-order-options');
-
   // const desktopMode = (window.innerWidth >= desktopSize);
   btn.addEventListener('click', () => {
     if (window.innerWidth >= desktopSize) {
@@ -375,7 +363,6 @@ const orderSystem = (btn) => {
       }
     });
   }
-  changeOrderCurrentData(divCardContainer);
 };
 
 // eslint-disable-next-line no-shadow
@@ -393,6 +380,7 @@ const menuSystem = () => {
 
   orderSystem(buttonOrder);
   filterSystem(buttonFilter, divFilterOptions);
+  changeOrderCurrentData();
 };
 const createIconType = (type) => {
   const iconType = document.createElement('img');
