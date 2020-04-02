@@ -69,7 +69,6 @@ export const calculateBetterCombinations = (whichPokemon) => {
         quickMoveDPS = (Number(whichPokemon['quick-move'][i]['base-damage']) + whichPokemon['quick-move'][i]['base-damage'] * 0.2) / whichPokemon['quick-move'][i]['move-duration-seg'];
       }
       const quickMoveEPS = Number(whichPokemon['quick-move'][i].energy) / quickMoveEPSduration;
-
       // eslint-disable-next-line eqeqeq
       const igualTypeSA = element => element == whichPokemon['special-attack'][j].type;
       let specialAttackDB = whichPokemon['special-attack'][j]['base-damage'];
@@ -79,26 +78,30 @@ export const calculateBetterCombinations = (whichPokemon) => {
       const specialAttackDuration = Number(whichPokemon['special-attack'][j]['move-duration-seg']);
       const specialAttackE = Number(whichPokemon['special-attack'][j].energy);
 
-      const timeToChargeEnergy = -specialAttackE / quickMoveEPS;
+      if (quickMoveDPS === 0 || quickMoveEPS === 0) {
+        result.push([whichPokemon['quick-move'][i].name, whichPokemon['special-attack'][j].name, 0]);
+      } else {
+        const timeToChargeEnergy = -specialAttackE / quickMoveEPS;
 
-      const timeToDamageByAttack = timeToChargeEnergy + specialAttackDuration;
-      const damageByAttack = (quickMoveDPS * timeToChargeEnergy) + specialAttackDB;
+        const timeToDamageByAttack = timeToChargeEnergy + specialAttackDuration;
+        const damageByAttack = (quickMoveDPS * timeToChargeEnergy) + specialAttackDB;
 
-      const timeAttackAmountNotUsed = timeFixed % timeToDamageByAttack;
-      const attackAmountUsed = (timeFixed - timeAttackAmountNotUsed) / timeToDamageByAttack;
-      const damageOnlyByAttackUsed = damageByAttack * attackAmountUsed;
-      const timeChargeAmountNotUsed = timeAttackAmountNotUsed % timeToChargeEnergy;
-      // eslint-disable-next-line max-len
-      const chargeAmountInTimeNoUsed = (timeAttackAmountNotUsed - timeChargeAmountNotUsed) / timeToChargeEnergy;
-      // eslint-disable-next-line max-len
-      const damageOnlyInTimeToCharge = chargeAmountInTimeNoUsed * (quickMoveDPS * timeToChargeEnergy);
-      // eslint-disable-next-line max-len
-      const damageInTimeChargeNotUsed = (timeChargeAmountNotUsed / specialAttackDuration) * specialAttackDB;
-      // eslint-disable-next-line max-len
-      let totalDamage = damageOnlyByAttackUsed + damageOnlyInTimeToCharge + damageInTimeChargeNotUsed;
-      totalDamage = parseFloat(Math.round(totalDamage * 100) / 100).toFixed(2);
+        const timeAttackAmountNotUsed = timeFixed % timeToDamageByAttack;
+        const attackAmountUsed = (timeFixed - timeAttackAmountNotUsed) / timeToDamageByAttack;
+        const damageOnlyByAttackUsed = damageByAttack * attackAmountUsed;
+        const timeChargeAmountNotUsed = timeAttackAmountNotUsed % timeToChargeEnergy;
+        // eslint-disable-next-line max-len
+        const chargeAmountInTimeNoUsed = (timeAttackAmountNotUsed - timeChargeAmountNotUsed) / timeToChargeEnergy;
+        // eslint-disable-next-line max-len
+        const damageOnlyInTimeToCharge = chargeAmountInTimeNoUsed * (quickMoveDPS * timeToChargeEnergy);
+        // eslint-disable-next-line max-len
+        const damageInTimeChargeNotUsed = (timeChargeAmountNotUsed / specialAttackDuration) * specialAttackDB;
+        // eslint-disable-next-line max-len
+        let totalDamage = damageOnlyByAttackUsed + damageOnlyInTimeToCharge + damageInTimeChargeNotUsed;
+        totalDamage = parseFloat(Math.round(totalDamage * 100) / 100);
 
-      result.push([whichPokemon['quick-move'][i].name, whichPokemon['special-attack'][j].name, totalDamage]);
+        result.push([whichPokemon['quick-move'][i].name, whichPokemon['special-attack'][j].name, totalDamage]);
+      }
     }
   }
   result = result.sort((a, b) => b[2] - a[2]);

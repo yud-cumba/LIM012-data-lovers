@@ -105,13 +105,20 @@ describe('Test función calcular', () => {
     }
   });
 
+  it('El daño debería ser un número de dos decimales', () => {
+    for (let i = 0; i < data.pokemon.length; i += 1) {
+      const betterCombinations = calculateBetterCombinations(data.pokemon[i]);
+      for (let j = 0; j < betterCombinations.length; j += 1) {
+        expect(typeof betterCombinations[j][2]).toBe('number');
+      }
+    }
+  });
+
   it('Deberia ordenar de mayor a menor según orden de daño', () => {
     for (let i = 0; i < data.pokemon.length; i += 1) {
       const betterCombinations = calculateBetterCombinations(data.pokemon[i]);
-      const array = [betterCombinations[0][2]];
       for (let j = 1; j < betterCombinations.length; j += 1) {
-        array.push(betterCombinations[j][2]);
-        expect(array[j - 1]).toBeGreaterThanOrEqual(array[j]);
+        expect(betterCombinations[j - 1][2]).toBeGreaterThanOrEqual(betterCombinations[j][2]);
       }
     }
   });
