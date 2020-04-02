@@ -34,13 +34,13 @@ Diseñamos bosquejos (para desktop, móvil y tablet) que constaba de dos pantall
 ![](/src/images/movil2_opt.jpg)
 ![](/src/images/movil3_opt.jpg)
 #### Prototipo Tablet
-![](/src/images/tablet1.jfif)
-![](/src/images/tablet2.jfif)
-![](/src/images/tablet3.jfif)
+![](/src/images/tablet1_opt.jpg)
+![](/src/images/tablet2_opt.jpg)
+![](/src/images/tablet3_opt.jpg)
 #### Prototipo Desktop
-![](/src/images/desktop1.jfif)
-![](/src/images/desktop2.jfif)
-![](/src/images/desktop3.jfif)
+![](/src/images/desktop1_opt.jpg)
+![](/src/images/desktop2_opt.jpg)
+![](/src/images/desktop3_opt.jpg)
 
 ### Prototipo de alta fidelidad
 Diseñamos prototipos en FIGMA (para desktop y móvil) que constaba de dos pantallas.
