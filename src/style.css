@@ -297,9 +297,7 @@ body{
   text-align: center;
   background:var(--color-2); 
 }#logo-pokemon{  
-  height: 300px;   
-  min-height: 200px; 
-  min-width: 410px;
+  height: 150px;
   }
 
 #footer{
