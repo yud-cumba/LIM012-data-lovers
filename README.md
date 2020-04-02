@@ -14,7 +14,7 @@
 Pokémon GO es una experiencia de juego internacional que cuenta con más de mil millones de descargas y ha sido nombrada "el mejor juego para móviles" por Game Developers Choice Awards y "la mejor aplicación del año" por TechCrunch (tomado de Google Play).
 ¿Tú también quieres unirte a esta experiencia pero sabes muy poco o nada acerca de pokemón? ¿Llevas poco tiempo jugando con esta aplicación y te sientes perdido(a)?
 
-[Pokedex]() es una página web dirigida principalmente a jugadores de Pokemon GO principiantes que quieren saber más información de cada pokemon y de esta manera estar mejor preparado para una batalla, aunque igual resulta útil para jugadores de cualquier nivel.
+[Pokedex](https://yud-cumba.github.io/LIM012-data-lovers/src/) es una página web dirigida principalmente a jugadores de Pokemon GO principiantes que quieren saber más información de cada pokemon y de esta manera estar mejor preparado para una batalla, aunque igual resulta útil para jugadores de cualquier nivel.
 
 ## 2. Objetivo de la página
 
@@ -28,11 +28,11 @@ Las historias de usuario se trabajaron con la herramienta trello en el siguiente
 ## 4. Diseño de la Interfaz de Usuario
 
 ### Prototipo de baja fidelidad
-Diseñamos bosquejos (para desktop, móvil t tablet) que constaba de dos pantallas.
+Diseñamos bosquejos (para desktop, móvil y tablet) que constaba de dos pantallas.
 #### Prototipo Móvil
-![](/src/images/movil1.jfif)
-![](/src/images/movil2.jfif)
-![](/src/images/movil3.jfif)
+![](/src/images/movil1_opt.jpg)
+![](/src/images/movil2_opt.jpg)
+![](/src/images/movil3_opt.jpg)
 #### Prototipo Tablet
 ![](/src/images/tablet1.jfif)
 ![](/src/images/tablet2.jfif)
@@ -64,10 +64,10 @@ y de equipo.
 
 ### UX
 
-- [ ] Diseñar la aplicación pensando y entendiendo al usuario.
-- [ ] Crear prototipos para obtener _feedback_ e iterar.
+- [x] Diseñar la aplicación pensando y entendiendo al usuario.
+- [x] Crear prototipos para obtener _feedback_ e iterar.
 - [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
-- [ ] Planear y ejecutar _tests_ de usabilidad.
+- [x] Planear y ejecutar _tests_ de usabilidad.
 
 ### HTML y CSS
 
