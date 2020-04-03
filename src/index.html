@@ -13,6 +13,7 @@
   <body>
     <i class="icon-keyboard_arrow_up grow" id="icon-arrow-up"></i>
     <div id="root">
+
       <header id="header-page">        
         <img id = "logo-pokemon" src="images/pokemon-go-1.png" alt="">
       </header>
@@ -20,77 +21,78 @@
       <div id="modal-mode">     
 
         <div id="modal-window" class="fixed">
-        <!-- <img src="images/close.png" alt="" id="close-modal" class="icon-small btn-close-img"> -->
-        <i class="icon-cross " id="close-modal"></i>
-        <div id="div-img-modal" >          
-          <img  id="img-pokemon-modal" class="pokemon-img-medium">                    
-        </div>  
-        
-        <section id="body-modal" class="modal- flex-wrap">  
-          <span id="div-pokemon-name-modal" class="font"></span>                              
-          <div class="column-1 flex-wrap color-container">
-            <img src="images/cintam.png" alt="" class="icon-medium">
-            <div class="font">
-              <span class="label-section ">Height</span>
-              <span id="height" class="data-section-2"></span>
-            </div>
-          </div>          
-          <div class="column-1 flex-wrap color-container">
-            <img src="images/balanza.png" alt="" class="icon-medium">
-            <div class="font">
-              <span class="label-section">Weight</span>
-              <span id="weight" class="data-section-2"></span>
-            </div>          
-          </div>
-          <div class="column-1 flex-wrap color-container">
-            <img src="images/world.png" alt="" class="icon-medium">
-            <div class="font">
-              <span class="label-section ">Region</span>
-              <span id="region" class="data-section-2"></span>
-            </div>
-          </div>
 
-          <div class="column-1 flex-wrap color-container">
-            <img src="images/candy.png" alt="" class="icon-medium">
-            <div class="font">
-              <span class="label-section ">Candy</span>
-              <span id="candy" class="data-section-2"></span>
-            </div>
-          </div>
-        
+          <i class="icon-cross " id="close-modal"></i>
 
-          <div class="column-3 font color-container flex-wrap" id = "sections-types">
-            <span class="label-section text-aling"> Type</span>            
-            <span class="label-section text-aling"> Resistant</span>            
-            <span class="label-section text-aling"> Weaknesses</span>            
-            <div id = "types" class="section-modal flex-wrap"></div>
-            <div id = "resistant" class="section-modal flex-wrap"></div>
-            <div id = "weaknesses" class="section-modal flex-wrap"></div>
-          </div>
+          <div id="div-img-modal">
+            <img id="img-pokemon-modal" class="image-modal" src="">
+          </div>  
+          
+          <section id="body-modal" class="modal flex-wrap">  
+            <span id="pokemon-name-modal" class="font f-medium f-blue one-fraction"></span>
 
-          <div class="column-3 flex-wrap color-container">
-            <button id="get-set-move" class="font grow" name = "calculate">Calculate Damage</button>
+            <div class="column-1 flex-wrap color-container ">
+              <img src="images/cintam.png" alt="" class="icon-medium">          
+              <div class="font f-small">
+                  <span class="block f-blue">Height</span><span id="value-height" class=""></span>
+              </div>
+            </div>  
 
-            <div id="move-and-attack" class="column-3 flex-wrap">
-              <span class="label-section font ">Special Atacks</span>
-              <span class="label-section font ">Quick Move</span>
-
-              <table id="special-attacks-table" class="column-2 font">
-                <!-- <tr><th>tipo</th><th>daño</th><th>energia</th>time</tr> -->
-              </table>
-
-              <table id="quick-move-table" class="column-2 font">                
-              </table>        
+            <div class="column-1 flex-wrap color-container">
+              <img src="images/balanza.png" alt="" class="icon-medium">
+              <div class="font f-small">
+                <span class="block f-blue">Weight</span><span id="value-weight" class="color-gray"></span>
+              </div>          
             </div>
 
-            <div id="calculate-damage" class="column-3 flex-wrap">
-              <table id="table-damage" class=" column-3 font text-aling"></table>
+            <div class="column-1 flex-wrap color-container">
+              <img src="images/world.png" alt="" class="icon-medium">
+              <div class="font f-small">
+                <span class="block f-blue">Region</span><span id="value-region" class="color-gray"></span>
+              </div>
             </div>
-          </div>
 
-          <p class="label-section font">EVOLUTION</p>            
-          <div id="evolution" class="column-3 flex-wrap"></div>          
-        </section>
+            <div class="column-1 flex-wrap color-container">
+              <img src="images/candy.png" alt="" class="icon-medium">
+              <div class="font f-small">
+                <span class="block f-blue">Candy</span><span id="value-candy" class="color-gray"></span>
+              </div>
+            </div>
+          
+            <div class="column-3 font color-container flex-wrap">
+              <span class="f-small f-blue three-fraction"> Type</span>            
+              <span class="f-small f-blue three-fraction"> Resistant</span>            
+              <span class="f-small f-blue three-fraction"> Weaknesses</span>            
+              <div id = "types" class="section-modal flex-wrap"></div>
+              <div id = "resistant" class="section-modal flex-wrap"></div>
+              <div id = "weaknesses" class="section-modal flex-wrap"></div>
+            </div>
+
+            <div class="column-3 flex-wrap color-container">
+              <button id="btn-calculate" class="font f-small f-white grow" name = "calculate">Calculate Damage</button>
+
+              <div id="move-and-attack" class="column-3 flex-wrap">
+                <span class="two-fraction font f-small f-blue">special attacks</span>
+                <span class="two-fraction font f-small f-blue">quick move</span>
+
+                <table id="special-attacks-table" class="column-2 font">
+                  <!-- <tr><th>tipo</th><th>daño</th><th>energia</th>time</tr> -->
+                </table>
+
+                <table id="quick-move-table" class="column-2 font">                
+                </table>        
+              </div>
+
+              <div id="calculate-damage" class="column-3 flex-wrap">
+                <table id="table-damage" class=" column-3 font text-aling"></table>
+              </div>
+            </div>
+
+            <span class="one-fraction f-blue font f-small">Evolution</span>            
+
+            <div id="evolution" class="column-3 flex-wrap"></div>          
+            
+          </section>
       </div>
       </div>
                 
@@ -147,8 +149,9 @@
             <div id = "card-container-block" >   
               
               <div class="slider">
-                <div class="title-slider font">
-                  <div class="sub-title"><span class="result"></span><span class="title-slider-p"></span></div>
+                <div class="div-title-slider font">
+                  <div class="title-slider" ><span class="result"></span><span class="title-slider-p"></span>
+                  </div>
                   <a class="show-more" >Ver más</a> </div>
                   <div class="slide">
                     <div class="slide-cards type"></div>                
@@ -158,9 +161,11 @@
                 </div>
                 
                 <div class="slider ">
-                  <div class="title-slider font">
-                    <div class="sub-title"><span class="result"></span><span class="title-slider-p"></span></div>
-                    <a class="show-more">Ver más</a></div>
+                  <div class="div-title-slider font">
+                    <div class="title-slider"><span class="result"></span><span class="title-slider-p"></span>
+                    </div>
+                    <a class="show-more">Ver más</a>
+                  </div>
                     <div class="slide">
                       <div class="slide-cards resistant" ></div>                
                     </div>
@@ -169,8 +174,9 @@
                   </div>
                   
                   <div class="slider">
-                    <div class="title-slider font">
-                      <div class="sub-title"><span class="result"></span><span class="title-slider-p"></span></div>
+                    <div class="div-title-slider font">
+                      <div class="title-slider"><span class="result"></span><span class="title-slider-p"></span>
+                      </div>
                       <a class="show-more">Ver más </a></div>
                       <div class="slide">
                         <div class="slide-cards weaknesses" ></div>
@@ -184,15 +190,19 @@
                 </main>
               </section>
               
-              <footer id="footer" >
-                <img src="images/nature.png" alt="" id="img-footer">
-                <div id="div-info-footer">
-                  <h2 class="font"><img src="images/normal.png" class="icon-small">POKEDEX</h2>
-                  <h4 class="font"> Created by Elena Gordillo & Yudith Cumba</h4>
-                </div>
-      </footer>
+             
       
     </div>
+    <footer id="footer" >
+      <img src="images/nature.png" alt="" id="img-footer">
+      <div id="div-info-footer" class="text-aling">
+        <h2 class="font text-aling"><img src="images/normal.png" class="icon-small">POKEDEX</h2>
+        <h4 class="font text-aling"> Created by Elena Gordillo & Yudith Cumba</h4>
+        <span>
+          <i class="icon-css3 f-medium icons"></i> <i class="icon-github f-medium icons"></i> <i class="icon-html5 f-medium icons"></i> <i class="icon-javascript f-medium icons"></i>
+        </span>
+      </div>
+    </footer>
 
     <script src="main.js" type="module"></script>
     
