@@ -35,24 +35,24 @@ let resultTypes = [];
 let resultResistant = [];
 let resultWeaknesses = [];
 let currentData = [];
-const optionsFilter = [];
 let isContainerSection = false;
 let isContainerShowMore = false;
 let isShowMove = true;
 let showMoreSection = '';
-const positions = [0, 0, 0];
 let typeChoosed = '';
+let deg = 0;
 
-const getById = (label) => { document.getElementById(label); };
-const getByClass = (label) => { document.getElementsByClassName(label); };
-const getByQuery = (label) => { document.getElementsByClassName(label); };
+const optionsFilter = [];
+const positions = [0, 0, 0];
+
+const getById = label => document.getElementById(label);
+const getByClass = label => document.getElementsByClassName(label);
+const getByQuery = label => document.querySelector(label);
 
 const divCardContainerFlex = getById('card-container-flex');
 const divCardContainerBlock = getById('card-container-block');
-let deg = 0;
 const titleTop = getById('top-pagination-p');
 const modalMode = getById('modal-mode');
-const btnChangeOrder = getById('btn-change-order');
 
 const divOrderBy = getByClass('menu')[0];
 const divFilterBy = getByClass('menu')[1];
@@ -61,14 +61,16 @@ const modalWindow = getById('modal-window');
 
 const orderBySelect = getById('order-by-select');
 const topTitle = getById('top-pagination-p');
-const iconTitle = document.querySelector('.icon-title');
-const iconArrowBack = document.querySelector('.icon-back');
-const iconHome = document.querySelector('#icon-nav-home');
-const iconGoTop = document.querySelector('#icon-arrow-up');
+const iconTitle = getByQuery('.icon-title');
+
+const btnChangeOrder = getById('btn-change-order');
+const btnGoBack = getByQuery('.icon-back');
+const btnGoTop = getByQuery('#icon-arrow-up');
+const btnHome = getByQuery('#icon-nav-home');
 
 const createPokemonType = (type) => {
   const divPokemonType = document.createElement('div');
-  divPokemonType.className = 'pokemon-type font';
+  divPokemonType.className = 'pokemon-type font text-aling';
   divPokemonType.appendChild(document.createTextNode(type));
   divPokemonType.style.background = typeColors[type];
   return divPokemonType;
@@ -89,7 +91,7 @@ const createPokemonCard = (index, pokemon, container) => {
     card.innerHTML = `<span class="pokemon-name">${pokemon.name}</span>
                       <span class="pokemon-cp-hp">MAX CP ${pokemon.stats['max-cp']} / MAX HP ${pokemon.stats['max-cp']}</span>              
                       <img class="pokemon-img-medium" src="${pokemon.img}">
-                      <span class= "pokemon-about" > ${pokemon.about}</span>`;
+                      <span class= "pokemon-about text-aling" > ${pokemon.about}</span>`;
     putPokemonTypes(pokemon.type, card);
     container.append(card);
   }
@@ -106,7 +108,7 @@ const searchPokemon = () => {
   orderBySelect.selectedIndex = 0;
   topTitle.textContent = '';
   iconTitle.style.visibility = 'hidden';
-  iconArrowBack.style.visibility = 'hidden';
+  btnGoBack.style.visibility = 'hidden';
   if (isContainerSection === true) {
     divCardContainerBlock.style.display = 'none';
     isContainerSection = false;
@@ -119,7 +121,7 @@ const searchPokemon = () => {
   } else if (currentData.length === 0 && wordIntroduced.length !== 0) {
     divCardContainerFlex.innerHTML = `<p class="message font text-aling">
     Sorry, no results were found for your search <span class="import-text font">${wordIntroduced}</span> make sure it is well written
-    <i class="icon-wondering font"></i></p>`;
+    </p>`;
   } else {
     currentData = data.pokemon;
     showCard(currentData, divCardContainerFlex);
@@ -259,7 +261,7 @@ const showAllPokemons = (listData) => {
   isContainerShowMore = true;
 };
 
-iconArrowBack.addEventListener('click', (event) => {
+btnGoBack.addEventListener('click', (event) => {
   divCardContainerFlex.style.display = 'none';
   divCardContainerBlock.style.display = 'block';
   isContainerSection = true;
@@ -268,7 +270,7 @@ iconArrowBack.addEventListener('click', (event) => {
 
 const showMore = getByClass('show-more');
 showMore[0].addEventListener('click', () => {
-  iconArrowBack.style.visibility = 'visible';
+  btnGoBack.style.visibility = 'visible';
   showAllPokemons(resultTypes);
   currentData = resultTypes;
   titleTop.textContent = `${typeChoosed} Type Pokemons`;
@@ -277,7 +279,7 @@ showMore[0].addEventListener('click', () => {
 });
 
 showMore[1].addEventListener('click', () => {
-  iconArrowBack.style.visibility = 'visible';
+  btnGoBack.style.visibility = 'visible';
   showAllPokemons(resultResistant);
   currentData = resultResistant;
   titleTop.textContent = `Pokemons resistant to the ${typeChoosed} Type`;
@@ -286,7 +288,7 @@ showMore[1].addEventListener('click', () => {
 });
 
 showMore[2].addEventListener('click', () => {
-  iconArrowBack.style.visibility = 'visible';
+  btnGoBack.style.visibility = 'visible';
   showAllPokemons(resultWeaknesses);
   currentData = resultWeaknesses;
   titleTop.textContent = `Pokemons weaknesses to the ${typeChoosed} Type`;
@@ -350,7 +352,7 @@ const filterSystem = () => {
       orderBySelect.selectedIndex = 0;
       // eslint-disable-next-line no-return-assign
       optionsFilter.forEach(element => element.style.background = '#1B262C');
-      optionsFilter[i].style.background = 'var(--color-blue-3)';
+      optionsFilter[i].style.background = 'rgba(38, 52, 59, 0.822)';
       isContainerShowMore = false;
       if (window.innerWidth < desktopSize) hideMenu();
       btnChangeOrder.style.visibility = 'hidden';
@@ -391,7 +393,6 @@ const orderSystem = () => {
         } else {
           currentData = orderBy(currentData, event.target.value);
           showCard(currentData, divCardContainerFlex);
-          // changeOrderCurrentData(divCardContainerFlex);
         }
       }
     });
@@ -404,9 +405,9 @@ const orderSystem = () => {
         btnChangeOrder.style.transform = `rotate(${deg}deg)`;
         hideMenu();
         for (let j = 0; j < optionsOrder.length; j += 1) {
-          optionsOrder[j].style.background = 'rgb(43, 41, 41)';
+          optionsOrder[j].style.background = '#1B262C';
         }
-        optionsOrder[i].style.background = '#0F4C75';
+        optionsOrder[i].style.background = 'rgba(38, 52, 59, 0.822)';
         btnChangeOrder.style.visibility = (isContainerSection) ? 'hidden' : 'visible';
         if (isContainerSection) {
           orderSections(whichOrder[i]);
@@ -451,16 +452,16 @@ const showEvolution = (poke, container, prev, next) => {
       if (pokemon !== undefined) {
         divContainer = document.createElement('div');
         divContainer.className = 'card-pokemon-evolition';
-        divContainer.innerHTML = `<span class="font pokemon-name">${pokemon.name}</span>
-                                  <img src="${pokemon.img}" alt="" class="pokemon-img-small">`;
+        divContainer.innerHTML = `<span class="font one-fraction ">${pokemon.name}</span>
+                                  <img src="${pokemon.img}" alt="" class="image-modal">`;
         container.append(divContainer);
       }
     }
   }
   divContainer = document.createElement('div');
   divContainer.className = 'card-pokemon-evolition';
-  divContainer.innerHTML = `<span class="font pokemon-name">${poke.name}</span>
-                            <img src="${poke.img}" alt="" class="pokemon-img-small">`;
+  divContainer.innerHTML = `<span class="font one-fraction ">${poke.name}</span>
+                            <img src="${poke.img}" alt="" class="image-modal">`;
   container.append(divContainer);
 
   if (next !== undefined) {
@@ -469,8 +470,8 @@ const showEvolution = (poke, container, prev, next) => {
       if (pokemon !== undefined) {
         divContainer = document.createElement('div');
         divContainer.className = 'card-pokemon-evolition';
-        divContainer.innerHTML = `<span class="font pokemon-name">${pokemon.name}</span>
-                                  <img src="${pokemon.img}" alt="" class="pokemon-img-small">`;
+        divContainer.innerHTML = `<span class="font one-fraction">${pokemon.name}</span>
+                                  <img src="${pokemon.img}" alt="" class="image-modal">`;
         container.append(divContainer);
       }
     }
@@ -526,7 +527,7 @@ const calculeDamage = (container, list) => {
   }
 };
 
-const btnCalc = getById('get-set-move');
+const btnCalc = getById('btn-calculate');
 btnCalc.addEventListener('click', () => {
   showDamageOfMove(btnCalc);
 });
@@ -535,11 +536,11 @@ const showInfoPokemon = (name) => {
   modalWindow.style.display = 'block';
   const pokemon = data.pokemon.find(pk => pk.name === name);
   getById('img-pokemon-modal').setAttribute('src', pokemon.img);
-  getById('div-pokemon-name-modal').textContent = pokemon.name;
-  getById('height').textContent = pokemon.size.height;
-  getById('candy').textContent = pokemon.evolution.candy.replace('candy', '');
-  getById('region').textContent = pokemon.generation.name;
-  getById('weight').textContent = pokemon.size.weight;
+  getById('pokemon-name-modal').textContent = pokemon.name;
+  getById('value-height').textContent = pokemon.size.height;
+  getById('value-candy').textContent = pokemon.evolution.candy.replace('candy', '');
+  getById('value-region').textContent = pokemon.generation.name;
+  getById('value-weight').textContent = pokemon.size.weight;
   const types = getById('types');
   const resistant = getById('resistant');
   const weaknesses = getById('weaknesses');
@@ -582,7 +583,7 @@ document.addEventListener('click', (event) => {
   }
 });
 
-iconHome.addEventListener('click', () => {
+btnHome.addEventListener('click', () => {
   isContainerSection = false;
   divCardContainerBlock.style.display = 'none';
   divCardContainerFlex.style.display = 'flex';
@@ -592,12 +593,12 @@ iconHome.addEventListener('click', () => {
   showCard(currentData, divCardContainerFlex);
 });
 
-iconGoTop.addEventListener('click', () => {
+btnGoTop.addEventListener('click', () => {
   window.scrollTo(0, 0);
 });
 
 window.addEventListener('scroll', () => {
-  iconGoTop.style.height = (window.scrollY > 500) ? '60px' : '0px';
+  btnGoTop.style.height = (window.scrollY > 500) ? '60px' : '0px';
 });
 
 sliderSystem();
