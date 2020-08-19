@@ -493,7 +493,7 @@ const buildTable = (list, table) => {
                     <th><img class="icon-small" src="images/time.png"></tr>`;
   for (let i = 0; i < list.length; i += 1) {
     const row = `<tr><td>${list[i].name}</td>
-                    <td><img class="icon-small" src="/images/${list[i].type}-icon.png"></td>
+                    <td><img class="icon-small" src="images/${list[i].type}-icon.png"></td>
                     <td>${list[i]['base-damage']}</td>
                     <td>${list[i].energy}</td>
                     <td>${list[i]['move-duration-seg']}</td></tr>`;

@@ -677,7 +677,8 @@ nav{
   #modal-window{    
     width: 55vw;
     left: calc(45vw/2);
-    top:10%;
+    height: auto;
+    top: 13vh;
   }
   .title-slider-p{  
     font-size: 1.2em;
