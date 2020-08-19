@@ -757,7 +757,7 @@ nav{
     
     #modal-window{    
       width: 50vw;
-      left: calc(70vw/2);
+      left: calc(50vw/2);
       top: 13vh;
     }
     .f-medium{
