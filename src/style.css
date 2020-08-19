@@ -678,7 +678,7 @@ nav{
     width: 55vw;
     left: calc(45vw/2);
     height: auto;
-    top: 13vh;
+    top: 8vh;
   }
   .title-slider-p{  
     font-size: 1.2em;
@@ -759,9 +759,9 @@ nav{
   @media screen and (min-width: 1025px) {    
     
     #modal-window{    
-      width: 30vw;
+      width: 50vw;
       left: calc(70vw/2);
-      top:20vh;
+      top: 13vh;
     }
     .f-medium{
       font-size: 1.5em;;
