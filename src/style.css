@@ -329,14 +329,11 @@ body{
   width: 100%;
   text-align: center;
   background:var(--color-2); 
-<<<<<<< HEAD
-}#logo-pokemon{  
+}
+#logo-pokemon{  
   height: 150px;
   }
 
-=======
-}
->>>>>>> 2492513e6ac38f3c8f458062911f79362ddc4915
 #footer{
   width: 100%;
   height: 30%;
