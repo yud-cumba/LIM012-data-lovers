@@ -16,6 +16,13 @@ Pokémon GO es una experiencia de juego internacional que cuenta con más de mil
 
 [Pokedex](https://yud-cumba.github.io/LIM012-data-lovers/src/) es una página web dirigida principalmente a jugadores de Pokemon GO principiantes que quieren saber más información de cada pokemon y de esta manera estar mejor preparado para una batalla, aunque igual resulta útil para jugadores de cualquier nivel.
 
+![](/src/images/pokemon-1.png)
+![](/src/images/pokemon-2.png)
+![](/src/images/pokemon-3.png)
+![](/src/images/pokemon-4.png)
+![](/src/images/pokemon-5.png)
+![](/src/images/pokemon-6.png)
+
 ## 2. Objetivo de la página
 
 Mediante la página web, podrás acceder a la información de cada uno de los pokémones (dónde se detalla su nombre, una breve descripción, sus debilidades, resistencias, etc.), no necesitas saber su nombre exacto, simplemente bastará saber su inicial o las primeras letras de los pokemones que deseas conocer y nuesro buscador dinámico hará su trabajo.
@@ -58,11 +65,7 @@ y de equipo.
 
 - [x] Diseñar la aplicación pensando y entendiendo al usuario.
 - [x] Crear prototipos para obtener _feedback_ e iterar.
-<<<<<<< HEAD
-- [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
-=======
 - [x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
->>>>>>> 2492513e6ac38f3c8f458062911f79362ddc4915
 - [x] Planear y ejecutar _tests_ de usabilidad.
 
 ### HTML y CSS
