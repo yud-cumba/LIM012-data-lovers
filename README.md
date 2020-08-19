@@ -33,8 +33,6 @@ Las historias de usuario se trabajaron con la herramienta trello en el siguiente
 ### Prototipo de baja fidelidad
 Diseñamos bosquejos (para desktop, móvil y tablet) que constaba de dos pantallas.
 #### Prototipo Desktop
-![](/src/images/desktop1_opt.jpg)
-![](/src/images/desktop2_opt.jpg)
 ![](/src/images/desktop3_opt.jpg)
 
 ### Prototipo de alta fidelidad
