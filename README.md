@@ -8,7 +8,7 @@
 * [6. Checklist](#6-check-list)
 
 ***
-
+![](/src/images/pokemon-6.png)
 ## 1. Descripción del proyecto
 
 Pokémon GO es una experiencia de juego internacional que cuenta con más de mil millones de descargas y ha sido nombrada "el mejor juego para móviles" por Game Developers Choice Awards y "la mejor aplicación del año" por TechCrunch (tomado de Google Play).
@@ -16,12 +16,10 @@ Pokémon GO es una experiencia de juego internacional que cuenta con más de mil
 
 [Pokedex](https://yud-cumba.github.io/LIM012-data-lovers/src/) es una página web dirigida principalmente a jugadores de Pokemon GO principiantes que quieren saber más información de cada pokemon y de esta manera estar mejor preparado para una batalla, aunque igual resulta útil para jugadores de cualquier nivel.
 
-![](/src/images/pokemon-1.png)
 ![](/src/images/pokemon-2.png)
 ![](/src/images/pokemon-3.png)
 ![](/src/images/pokemon-4.png)
-![](/src/images/pokemon-5.png)
-![](/src/images/pokemon-6.png)
+
 
 ## 2. Objetivo de la página
 
