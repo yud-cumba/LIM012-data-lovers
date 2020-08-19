@@ -16,9 +16,7 @@ Pokémon GO es una experiencia de juego internacional que cuenta con más de mil
 
 [Pokedex](https://yud-cumba.github.io/LIM012-data-lovers/src/) es una página web dirigida principalmente a jugadores de Pokemon GO principiantes que quieren saber más información de cada pokemon y de esta manera estar mejor preparado para una batalla, aunque igual resulta útil para jugadores de cualquier nivel.
 
-![](/src/images/pokemon-2.png)
 ![](/src/images/pokemon-3.png)
-![](/src/images/pokemon-4.png)
 
 
 ## 2. Objetivo de la página
@@ -43,6 +41,7 @@ Diseñamos bosquejos (para desktop, móvil y tablet) que constaba de dos pantall
 Diseñamos prototipos en FIGMA (para desktop y móvil) que constaba de dos pantallas.
 #### Prototipo para Móvil y tablet
 ![](/src/images/figma-movil.PNG)
+![](/src/images/pokemon-2.png)
 #### Prototipo para Desktop
 ![](/src/images/desktop-figma-1.PNG)
 ![](/src/images/desktop-figma-2.PNG)
